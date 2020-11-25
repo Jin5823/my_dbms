@@ -1,0 +1,1 @@
+select pid, name from (select * from ((select tr.id as owner_id2 from Trainer as tr where hometown = "Sangnok City") as t1 inner join (select owner_id, pid from CatchedPokemon) as t2 on t1.owner_id2 = t2.owner_id)) as t3 inner join (select name, po.id as pid2 from Pokemon as po) as t4 on t3.pid = t4.pid2 order by pid asc;

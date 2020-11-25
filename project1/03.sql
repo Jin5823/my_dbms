@@ -1,0 +1,1 @@
+select avg(level) from ((select * from ((select po.id as pid2 from Pokemon as po where po.type = 'Electric') as t1 inner join (select pid, owner_id, level from CatchedPokemon) as t2 on t1.pid2 = t2.pid)) as t3 inner join (select tr.id as owner_id2 from Trainer as tr where hometown = 'Sangnok City') as t4 on t3.owner_id = t4.owner_id2);

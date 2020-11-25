@@ -1,0 +1,1 @@
+select name from ((select * from Pokemon where type = 'Grass') as t1 inner join (select * from Evolution) as t2 on t1.id = t2.before_id);

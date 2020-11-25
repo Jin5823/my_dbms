@@ -1,0 +1,1 @@
+select name, count(*) as cnt from ((select tr.id as owner_id2, name from Trainer as tr where hometown = "Sangnok City") as tp1 inner join (select owner_id, pid from CatchedPokemon) as tp2 on tp1.owner_id2 = tp2.owner_id) group by owner_id order by cnt desc;

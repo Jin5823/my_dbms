@@ -1,0 +1,1 @@
+select name from Trainer left join CatchedPokemon on Trainer.id = CatchedPokemon.owner_id group by owner_id having count(*) >=3 order by count(*) desc;

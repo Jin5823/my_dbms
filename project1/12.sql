@@ -1,0 +1,1 @@
+select distinct name, type from ((select pid, level from CatchedPokemon where level >= 30)as t1 inner Join (select * from Pokemon) as t2 on t1.pid = t2.id) order by name asc;

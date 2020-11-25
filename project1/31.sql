@@ -1,0 +1,1 @@
+select type from Evolution as e1 inner join Pokemon as p1 on e1.before_id = p1.id group by type having count(*) >= 3 order by type desc;

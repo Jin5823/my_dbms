@@ -1,0 +1,1 @@
+select count(distinct type) from ((select * from ((select leader_id from Gym where City = 'Sangnok City') as tp1 inner join (select owner_id, pid from CatchedPokemon) as tp2 on tp1.leader_id = tp2.owner_id)) as tp3 inner join (select po.id as pid2, po.type from Pokemon as po) as tp4 on tp3.pid = tp4.pid2);

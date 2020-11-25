@@ -1,0 +1,1 @@
+select fid as id, p1.name, p2.name, p3.name from ((select e1.before_id as fid, e2.before_id as sid, e2.after_id as tid from (Evolution as e1 inner join Evolution as e2 on e1.after_id = e2.before_id)) as t1 inner join Pokemon as p1 on t1.fid = p1.id inner join Pokemon as p2 on t1.sid = p2.id inner join Pokemon as p3 on t1.tid = p3.id);

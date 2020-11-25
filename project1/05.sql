@@ -1,0 +1,1 @@
+select name from ((select * from Gym) as t1 right outer join (select * from Trainer) as t2 on t1.leader_id = t2.id) where leader_id is null order by name asc;

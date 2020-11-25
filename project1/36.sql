@@ -1,0 +1,1 @@
+select name from (select e1.after_id from Evolution as e1 left outer join Evolution as e2 on e1.after_id=e2.before_id where e2.before_id is null) as temp inner join CatchedPokemon as cp1 on temp.after_id=cp1.pid inner join Trainer as t1 on cp1.owner_id = t1.id;

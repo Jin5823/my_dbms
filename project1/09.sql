@@ -1,0 +1,1 @@
+select name, avg(level) from ((select * from ((select leader_id from Gym) as t1 inner join (select name, tr.id as leader_id2 from Trainer as tr) as t2 on t1.leader_id = t2.leader_id2 )) as t3 inner join (select owner_id, level from CatchedPokemon) as t4 on t3.leader_id = t4.owner_id) group by name order by name asc;

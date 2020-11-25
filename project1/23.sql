@@ -1,0 +1,1 @@
+select distinct name from ((select owner_id from CatchedPokemon where level <= 10) as t1 inner join (select * from Trainer) as t2 on t1.owner_id = t2.id) order by name asc;

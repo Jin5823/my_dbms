@@ -1,0 +1,1 @@
+select name, maxlevel from ((select owner_id, max(level) as maxlevel from CatchedPokemon group by owner_id having count(owner_id) >= 4) as t1 inner join (select tr.id as owner_id2, name from Trainer as tr) as t2 on t1. owner_id = t2.owner_id2) order by name asc;

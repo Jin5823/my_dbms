@@ -1,0 +1,1 @@
+select hometown, avg(level) from ((select id as owner_id2, name, hometown from Trainer) as t1 inner join (select * from CatchedPokemon) as t2 on t1.owner_id2 = t2.owner_id) group by hometown;

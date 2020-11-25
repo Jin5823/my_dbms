@@ -1,0 +1,1 @@
+select owner_id, catched from ((select count(*) as catched from CatchedPokemon group by owner_id order by catched desc limit 1) as t1 inner join (select owner_id, count(*) as catched2 from CatchedPokemon group by owner_id) as t2 on t1.catched = t2.catched2) order by owner_id asc;
